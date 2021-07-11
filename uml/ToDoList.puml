@@ -1,0 +1,48 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class App {
+    main()
+    start()
+}
+
+class ToDoListController {
+    Button addItemButton;
+    DatePicker dueDatePicker;
+    TextField newItemDescription;
+    ListView<Item> itemList;
+    Button saveListButton;
+    Button loadListButton;
+    ToggleButton viewAllToggleButton;
+    ToggleButton viewUncompletedToggleButton;
+    ToggleButton viewCompletedToggleButton;
+
+    addItemButtonClicked()
+    saveListButtonClicked()
+    loadListButtonClicked()
+    viewAllClicked()
+    viewUncompletedClicked()
+
+}
+
+class ToDoList {
+
+}
+
+class Item {
+    LocalDate dueDate;
+    String itemDescription;
+    Boolean completionStatus;
+}
+
+class ItemSerializer {
+
+}
+
+javafx.Application <|-- App
+
+App -- ToDoListController
+ToDoList *-- Item
+
+
+@enduml

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane dividerPositions="0.5" prefHeight="430.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.ToDoListController">
+   <items>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL">
+         <items>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="647.0">
+               <children>
+                  <Button fx:id="addItemButton" layoutX="8.0" layoutY="6.0" mnemonicParsing="false" onAction="#addItemButtonClicked" prefHeight="25.0" prefWidth="70.0" text="Add Item" />
+                  <DatePicker fx:id="dueDatePicker" layoutX="86.0" layoutY="6.0" promptText="Due Date" />
+                  <TextField fx:id="newItemDescription" layoutX="267.0" layoutY="6.0" prefHeight="25.0" prefWidth="373.0" promptText="Item Description" />
+               </children>
+            </AnchorPane>
+            <ListView fx:id="itemList" prefHeight="200.0" prefWidth="200.0" />
+         </items>
+      </SplitPane>
+      <AnchorPane prefHeight="428.0" prefWidth="196.0">
+         <children>
+            <Button fx:id="saveListButton" layoutX="4.0" layoutY="402.0" mnemonicParsing="false" onAction="#saveListButtonClicked" prefHeight="25.0" prefWidth="194.0" text="Save List" />
+            <Button fx:id="loadListButton" layoutX="4.0" layoutY="377.0" mnemonicParsing="false" onAction="#loadListButtonClicked" prefHeight="25.0" prefWidth="194.0" text="Load List" />
+            <ToggleButton fx:id="viewAllToggleButton" layoutX="4.0" layoutY="2.0" mnemonicParsing="false" onAction="#viewAllClicked" prefHeight="25.0" prefWidth="194.0" text="View All" />
+            <ToggleButton fx:id="viewUncompletedToggleButton" layoutX="4.0" layoutY="27.0" mnemonicParsing="false" onAction="#viewUncompletedClicked" prefHeight="25.0" prefWidth="194.0" text="View Uncompleted" />
+            <ToggleButton fx:id="viewCompletedToggleButton" layoutX="4.0" layoutY="52.0" mnemonicParsing="false" onAction="#viewCompletedClicked" prefHeight="25.0" prefWidth="194.0" text="View Completed" />
+            <Separator layoutX="1.0" layoutY="76.0" prefWidth="200.0" />
+            <Separator layoutX="1.0" layoutY="368.0" prefWidth="200.0" />
+            <Button fx:id="removeSelected" layoutX="4.0" layoutY="183.0" mnemonicParsing="false" onAction="#removeSelectedClicked" prefHeight="25.0" prefWidth="194.0" text="Remove Selected" />
+            <Button fx:id="removeAll" layoutX="4.0" layoutY="208.0" mnemonicParsing="false" onAction="#removeAllClicked" prefHeight="25.0" prefWidth="194.0" text="Remove All" />
+            <Button fx:id="markCompleted" layoutX="4.0" layoutY="79.0" mnemonicParsing="false" onAction="#markCompletedClicked" prefHeight="25.0" prefWidth="194.0" text="Mark Completed" />
+            <Button fx:id="markUncompleted" layoutX="4.0" layoutY="104.0" mnemonicParsing="false" onAction="#markUncompletedClicked" prefHeight="25.0" prefWidth="194.0" text="Mark Uncompleted" />
+            <Separator layoutX="1.0" layoutY="128.0" prefWidth="200.0" />
+            <Separator layoutX="1.0" layoutY="181.0" prefWidth="200.0" />
+            <Button fx:id="editItemDesc" layoutX="4.0" layoutY="131.0" mnemonicParsing="false" onAction="#editItemDescClicked" prefHeight="25.0" prefWidth="194.0" text="Edit Item Description" />
+            <Button fx:id="changeDueDate" layoutX="4.0" layoutY="156.0" mnemonicParsing="false" onAction="#changeDueDateClicked" prefHeight="25.0" prefWidth="194.0" text="Change Due Date" />
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>
