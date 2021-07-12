@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.fxml.Initializable;
+import javafx.scene.control.cell.TextFieldListCell;
 
 
 import java.net.URL;
@@ -55,7 +56,9 @@ public class ToDoListController implements Initializable {
     }
 
     private void addItem() {
-        toDoList.add(new Item(dueDatePicker.getValue(), newItemDescription.getText()));
+        Item item = new Item(dueDatePicker.getValue(), newItemDescription.getText());
+
+        toDoList.add(item);
         itemList.setItems(toDoList);
         refresh();
     }
@@ -86,6 +89,11 @@ public class ToDoListController implements Initializable {
 
     @FXML
     public void markCompletedClicked(ActionEvent actionEvent) {
+        markCompleted();
+    }
+
+    private void markCompleted() {
+
     }
 
     @FXML
@@ -94,10 +102,16 @@ public class ToDoListController implements Initializable {
 
     @FXML
     public void editItemDescClicked(ActionEvent actionEvent) {
+        editItemDescription();
+    }
+
+    private void editItemDescription() {
     }
 
     @FXML
     public void changeDueDateClicked(ActionEvent actionEvent) {
+        dueDatePicker.getValue();
+
     }
 
 
@@ -123,5 +137,5 @@ public class ToDoListController implements Initializable {
             alert.setHeaderText("Error loading items from file system.");
         }
     }
-    
+
 }
